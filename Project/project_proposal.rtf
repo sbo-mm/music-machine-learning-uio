@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf840
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1. Brief Description:\
+The system will generate small audio-hooks (around 4secs) by learning how to interpret dance performances. The purpose is mostly creative and experimental. However from a pragmatic standpoint, if the system (as a proof of concept) produces acceptable results, it could be extended to generate audio compositions for, e.g., experimental dance performances. As an input, the system will receive a video-sequence encoded into a \'93motiongram\'94. The video-sequence(s) encompass various dance performances across a variety of genres. The output is dance music encoded as a mel-spectrogram. This spectrogtam can then be transformed into audio.  \
+\
+2. ML Techniques:\
+To realise the proposed system, a deep learning approach will be taken. Specifically, an \'93auto-encoder\'94 (AE) architecture seems suitable. From my own previous projects and experiences i have had good results with spectrogram-to-spectrogram generation by using an AE. Hence, extending previous ideas to accept a \'93motiongram\'94 instead seems readily available. Moreover, once trained, AEs can also be used in a generative fashion. New audio-hooks can be explored by investigating the latent space created through the AE.\
+\
+3. Feature Extraction:\
+The video sequences will be compressed to a grayscale image (a \'93motiongram\'94) representing the performance. This image can be considered a feature of the whole motion. However, no further feature extraction is performed on this image, and as such, the system is fed with raw pixel data. The audio is transformed to mel-spectrograms, similarly with no further feature extraction. Hence, the system is working on pixel data on both input and output. Since i am using a deep learning approach, higher level features are automatically extracted by the system. \
+\
+4. Data set:\
+I am using the AIST Dance Video Database (https://aistdancedb.ongaaccel.jp/). This database contains custom videos of dance performances (input data: video \'97> motiongram) choreographed to specific dance-music (output: audio \'97> mel-spectrogram). The transformation of videos to motiongrams as well as audio to spectrograms are done by myself, hence im generating a data set based on the video-audio pair provided by AIST.\
+\
+5. Evaluation:\
+Here i am a little unsure on how to proceed.\
+\
+6. Contribution:\
+The idea of audio generation with an AE is not new. Neither is using a spectrogram-to-spectrogram mapping. The AEs network topology will be sourced from a student colleague of mine who had success using AEs to generate bird song (using spectrogram-to-spectrogram mapping) (e.g. https://github.com/juanalonso/latentbirds). My own contribution is testing that topology with another kind of input. \
+\
+\
+}
